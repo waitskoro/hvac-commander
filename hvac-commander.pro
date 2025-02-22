@@ -10,9 +10,11 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    settingsdialog.cpp \
     widget.cpp
 
 HEADERS += \
+    settingsdialog.h \
     widget.h
 
 # Default rules for deployment.
