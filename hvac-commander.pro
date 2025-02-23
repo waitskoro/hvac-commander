@@ -10,11 +10,17 @@ CONFIG += c++11
 
 SOURCES += \
     main.cpp \
+    parameterwidget.cpp \
     settingsdialog.cpp \
+    unitsconverter.cpp \
     widget.cpp
 
 HEADERS += \
+    enums.h \
+    parameter.h \
+    parameterwidget.h \
     settingsdialog.h \
+    unitsconverter.h \
     widget.h
 
 # Default rules for deployment.
