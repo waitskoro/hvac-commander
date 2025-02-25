@@ -6,10 +6,13 @@ enum Units {
     Fahrenheit,
 
     MMHg,
-    Pascal
+    Pascal,
+
+    Percent
 };
 
 enum Type {
+    Pressure,
+    Humidity,
     Temperature,
-    Pressure
 };

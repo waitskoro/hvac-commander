@@ -1,9 +1,14 @@
-#include "widget.h"
+#include "application.h"
+
 #include "settingsdialog.h"
+#include "parameterwidget.h"
+#include "uidatamanagerscene.h"
 
 #include <QMessageBox>
+#include <QGraphicsScene>
+#include <QGraphicsView>
 
-Widget::Widget(QWidget *parent)
+Application::Application(QWidget *parent)
     : QWidget(parent)
 {
     setMinimumHeight(600);
@@ -22,10 +27,9 @@ Widget::Widget(QWidget *parent)
     font.setPointSizeF(14);
     m_header->setFont(font);
 
-    m_humidityLabel = new QLabel("Влажность: 60%");
-
-    m_temperatureWidget = new ParameterWidget(Parameter { Type::Temperature, Units::Celsius, 23 });
     m_pressureWidget = new ParameterWidget(Parameter { Type::Pressure, Units::MMHg, 1000 });
+    m_humidityLabel = new ParameterWidget(Parameter { Type::Temperature, Units::Percent, 60 });
+    m_temperatureWidget = new ParameterWidget(Parameter { Type::Temperature, Units::Celsius, 23 });
 
     QHBoxLayout* pHeaderLayout = new QHBoxLayout;
     pHeaderLayout->setContentsMargins(10, 10, 10, 10);
@@ -37,30 +41,40 @@ Widget::Widget(QWidget *parent)
     pHeaderLayout->addWidget(m_pressureWidget);
     pHeaderLayout->addStretch();
 
+    m_uiDataManagerScene = new UiDataManagerScene(this);
+    QGraphicsView *view = new QGraphicsView(m_uiDataManagerScene, this);
+
     pBoxLayout->addWidget(m_header);
     pBoxLayout->addLayout(pHeaderLayout);
+    pBoxLayout->addWidget(view);
     pBoxLayout->addStretch();
 
     QPushButton *settingsButton = new QPushButton(tr("Настройки"));
-    connect(settingsButton, &QPushButton::clicked, this, &Widget::showSettingsDialog);
+    connect(settingsButton, &QPushButton::clicked, this, &Application::showSettingsDialog);
     pBoxLayout->addWidget(settingsButton);
 
     setLayout(pBoxLayout);
 
-    m_temperatureWidget->setValue(25.0);
+    m_humidityLabel->setValue(60);
     m_pressureWidget->setValue(1010);
+    m_temperatureWidget->setValue(25.0);
+
+    connect(m_uiDataManagerScene,
+            &UiDataManagerScene::temperatureChanged,
+            m_temperatureWidget,
+            &ParameterWidget::setValue);
 }
 
-void Widget::showSettingsDialog()
+void Application::showSettingsDialog()
 {
     SettingsDialog dialog(m_temperatureWidget->getCurrentUnit(), m_pressureWidget->getCurrentUnit(), this);
-    connect(&dialog, &SettingsDialog::parametersAccepted, this, &Widget::updateParameters);
+    connect(&dialog, &SettingsDialog::parametersAccepted, this, &Application::updateParameters);
     dialog.exec();
 }
 
-void Widget::updateParameters(double temperature, int humidity, int pressure)
+void Application::updateParameters(double temperature, int humidity, int pressure)
 {
-    m_temperatureWidget->setValue(temperature);
-    m_humidityLabel->setText(QString("Влажность: %1%").arg(humidity));
+    m_humidityLabel->setValue(humidity);
     m_pressureWidget->setValue(pressure);
+    m_temperatureWidget->setValue(temperature);
 }

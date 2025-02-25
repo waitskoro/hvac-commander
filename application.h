@@ -1,20 +1,20 @@
-#ifndef WIDGET_H
-#define WIDGET_H
+#ifndef APPLICATION_H
+#define APPLICATION_H
 
 #include <QWidget>
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
 
-#include "parameterwidget.h"
-
 class SettingsDialog;
+class ParameterWidget;
+class UiDataManagerScene;
 
-class Widget : public QWidget {
+class Application : public QWidget {
     Q_OBJECT
 
 public:
-    explicit Widget(QWidget *parent = nullptr);
+    explicit Application(QWidget *parent = nullptr);
 
 signals:
     void parametersChanged(double temperature, int humidity, int pressure);
@@ -25,10 +25,13 @@ private slots:
 
 private:
     QLabel *m_header;
-    QLabel *m_humidityLabel;
 
+    ParameterWidget *m_humidityLabel;
     ParameterWidget *m_pressureWidget;
     ParameterWidget *m_temperatureWidget;
+
+    UiDataManagerScene *m_uiDataManagerScene;
+
 };
 
-#endif // WIDGET_H
+#endif // APPLICATION_H

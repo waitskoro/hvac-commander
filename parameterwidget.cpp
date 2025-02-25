@@ -19,8 +19,9 @@ ParameterWidget::ParameterWidget(Parameter parameter)
 void ParameterWidget::setTextInLabel()
 {
     static const std::map<Type, QString> typeNames = {
+        {Type::Pressure, "Давление"},
+        {Type::Humidity, "Влажность"},
         {Type::Temperature, "Температура"},
-        {Type::Pressure, "Давление"}
     };
 
     static const std::map<Units, QString> unitSuffixes = {
@@ -28,7 +29,8 @@ void ParameterWidget::setTextInLabel()
         {Units::Fahrenheit, "°F"},
         {Units::Kelvin, "K"},
         {Units::MMHg, "мм рт. ст."},
-        {Units::Pascal, "Па"}
+        {Units::Pascal, "Па"},
+        {Units::Percent, "%"}
     };
 
     QString text = QString("%1: %2 %3")
