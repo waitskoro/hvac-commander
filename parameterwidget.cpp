@@ -103,6 +103,7 @@ void ParameterWidget::changeUnit(const Units newUnit)
             throw std::invalid_argument("Unsupported conversion");
         }
         m_parameter.unit = newUnit;
+        emit unitChanged(m_parameter.unit);
         setTextInLabel();
     } catch (const std::exception& e) {
         qWarning() << "Error during unit conversion:" << e.what();

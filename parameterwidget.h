@@ -19,6 +19,7 @@ public:
 
 signals:
     void valueChanged();
+    void unitChanged(Units newUnit);
 
 protected:
     virtual void mousePressEvent(QMouseEvent *event) override;

@@ -63,6 +63,11 @@ Application::Application(QWidget *parent)
             &UiDataManagerScene::temperatureChanged,
             m_temperatureWidget,
             &ParameterWidget::setValue);
+
+    connect(m_temperatureWidget,
+            &ParameterWidget::unitChanged,
+            m_uiDataManagerScene,
+            &UiDataManagerScene::onUnitChanged);
 }
 
 void Application::showSettingsDialog()

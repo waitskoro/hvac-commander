@@ -7,5 +7,6 @@ struct Parameter {
     Units unit;
     double value;
 
-    Parameter(Type t, Units u, double v) : type(t), unit(u), value(v) {}
+    Parameter(Type t, Units u, double v)
+        : type(t), unit(u), value(v) {}
 };
