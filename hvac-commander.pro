@@ -10,18 +10,27 @@ CONFIG += c++11
 
 SOURCES += \
     application.cpp \
+    blockitem.cpp \
+    common/triangle.cpp \
     main.cpp \
     parameterwidget.cpp \
     settingsdialog.cpp \
+    textwrapper.cpp \
     uidatamanagerscene.cpp \
     unitsconverter.cpp
 
 HEADERS += \
     application.h \
+    appsettings.h \
+    blockitem.h \
+    common/custombutton.h \
+    common/triangle.h \
     enums.h \
     parameter.h \
     parameterwidget.h \
+    parameterwidgetcontainer.h \
     settingsdialog.h \
+    textwrapper.h \
     uidatamanagerscene.h \
     unitsconverter.h
 

@@ -1,33 +1,33 @@
 #include "unitsconverter.h"
 
-double UnitsConverter::fahrenheitToCelsius(double fahrenheit) {
+int UnitsConverter::fahrenheitToCelsius(int fahrenheit) {
     return (fahrenheit - 32) * 5 / 9;
 }
 
-double UnitsConverter::fahrenheitToKelvin(double fahrenheit) {
+int UnitsConverter::fahrenheitToKelvin(int fahrenheit) {
     return (fahrenheit - 32) * 5 / 9 + 273.15;
 }
 
-double UnitsConverter::celsiusToFahrenheit(double celsius) {
+int UnitsConverter::celsiusToFahrenheit(int celsius) {
     return celsius * 9 / 5 + 32;
 }
 
-double UnitsConverter::celsiusToKelvin(double celsius) {
+int UnitsConverter::celsiusToKelvin(int celsius) {
     return celsius + 273.15;
 }
 
-double UnitsConverter::kelvinToCelsius(double kelvin) {
+int UnitsConverter::kelvinToCelsius(int kelvin) {
     return kelvin - 273.15;
 }
 
-double UnitsConverter::kelvinToFahrenheit(double kelvin) {
+int UnitsConverter::kelvinToFahrenheit(int kelvin) {
     return (kelvin - 273.15) * 9 / 5 + 32;
 }
 
-double UnitsConverter::pascalToMMHg(double pascal) {
+int UnitsConverter::pascalToMMHg(int pascal) {
     return pascal / 133.322;
 }
 
-double UnitsConverter::mmHgToPascal(double mmHg) {
+int UnitsConverter::mmHgToPascal(int mmHg) {
     return mmHg * 133.322;
 }

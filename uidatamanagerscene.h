@@ -1,11 +1,14 @@
-#ifndef UIDATAMANAGERSCENE_H
-#define UIDATAMANAGERSCENE_H
+#pragma once
 
+#include <QLabel>
 #include <QSlider>
 #include <QObject>
+#include <QPushButton>
 #include <QGraphicsScene>
 
 #include "enums.h"
+
+class BlockItem;
 
 class UiDataManagerScene : public QGraphicsScene
 {
@@ -13,27 +16,20 @@ class UiDataManagerScene : public QGraphicsScene
 
 public:
     explicit UiDataManagerScene(QObject *parent = nullptr);
-    void onUnitChanged(Units unit);
+
+    void onTemperatureChanged(qint32 value);
+
 signals:
-    void temperatureChanged(double value);
+    void temperatureUp();
+    void temperatureDown();
 
 private:
-    struct UnitInfo {
-        int min;
-        int max;
-        QString suffix;
-        double scale;
-    };
+    BlockItem* m_leftBlock;
+    BlockItem* m_rightBlock;
 
-    UnitInfo getUnitInfo(Units unit);
-    void updateSliderAndLabels(Units unit);
-    void onSliderValueChanged(int value);
+    QPushButton *m_button;
 
-    QSlider *m_slider;
-    QGraphicsSimpleTextItem *m_minTempLabel;
-    QGraphicsSimpleTextItem *m_maxTempLabel;
-    QGraphicsSimpleTextItem *m_sliderValueLabel;
-    Units m_currentUnit;
+    QGraphicsTextItem *m_temperatureValueView;
+
+    void createBlockManagerTemp();
 };
-
-#endif // UIDATAMANAGERSCENE_H

@@ -11,8 +11,8 @@ class ParameterWidget : public QLabel {
 public:
     explicit ParameterWidget(Parameter parameter);
 
-    double getValue() const;
-    void setValue(double value);
+    int getValue() const;
+    void setValue(int value);
 
     void changeUnit(const Units unit);
     Units getCurrentUnit() const;

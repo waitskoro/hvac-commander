@@ -5,17 +5,17 @@
 
 class UnitsConverter {
 public:
-    static double celsiusToKelvin(double celsius);
-    static double celsiusToFahrenheit(double celsius);
+    static int celsiusToKelvin(int celsius);
+    static int celsiusToFahrenheit(int celsius);
 
-    static double fahrenheitToKelvin(double fahrenheit);
-    static double fahrenheitToCelsius(double fahrenheit);
+    static int fahrenheitToKelvin(int fahrenheit);
+    static int fahrenheitToCelsius(int fahrenheit);
 
-    static double kelvinToCelsius(double kelvin);
-    static double kelvinToFahrenheit(double kelvin);
+    static int kelvinToCelsius(int kelvin);
+    static int kelvinToFahrenheit(int kelvin);
 
-    static double pascalToMMHg(double pascal);
-    static double mmHgToPascal(double mmHg);
+    static int pascalToMMHg(int pascal);
+    static int mmHgToPascal(int mmHg);
 };
 
 #endif // UNITSCONVERTER_H

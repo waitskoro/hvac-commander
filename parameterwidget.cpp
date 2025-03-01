@@ -1,19 +1,16 @@
-#include "parameterwidget.h"
+﻿#include "parameterwidget.h"
 #include "unitsconverter.h"
 
 #include <map>
 #include <QDebug>
 #include <QMouseEvent>
 
-using ConverterFunc = double (*)(double);
+using ConverterFunc = int (*)(int);
 
 ParameterWidget::ParameterWidget(Parameter parameter)
     : m_parameter(parameter)
 {
-    connect(this,
-            &ParameterWidget::valueChanged,
-            this,
-            &ParameterWidget::setTextInLabel);
+    setTextInLabel();
 }
 
 void ParameterWidget::setTextInLabel()
@@ -41,14 +38,15 @@ void ParameterWidget::setTextInLabel()
     setText(text);
 }
 
-double ParameterWidget::getValue() const
+int ParameterWidget::getValue() const
 {
     return m_parameter.value;
 }
 
-void ParameterWidget::setValue(double value)
+void ParameterWidget::setValue(int value)
 {
     m_parameter.value = value;
+    setTextInLabel();
     emit valueChanged();
 }
 
@@ -108,6 +106,8 @@ void ParameterWidget::changeUnit(const Units newUnit)
     } catch (const std::exception& e) {
         qWarning() << "Error during unit conversion:" << e.what();
     }
+
+    emit valueChanged();
 }
 
 Units ParameterWidget::getCurrentUnit() const

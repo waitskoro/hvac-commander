@@ -6,6 +6,8 @@
 #include <QHBoxLayout>
 #include <QLabel>
 
+#include "parameterwidgetcontainer.h"
+
 class SettingsDialog;
 class ParameterWidget;
 class UiDataManagerScene;
@@ -23,12 +25,12 @@ private slots:
     void showSettingsDialog();
     void updateParameters(double temperature, int humidity, int pressure);
 
-private:
-    QLabel *m_header;
+    void setupMainLayout();
+    void connectSignalsAndSlots();
+    void setInitialValues();
 
-    ParameterWidget *m_humidityLabel;
-    ParameterWidget *m_pressureWidget;
-    ParameterWidget *m_temperatureWidget;
+private:
+    ParameterWidgetContainer *m_parameterWidgets;
 
     UiDataManagerScene *m_uiDataManagerScene;
 
