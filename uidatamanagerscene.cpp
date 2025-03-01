@@ -2,7 +2,6 @@
 
 #include "blockitem.h"
 #include "common/triangle.h"
-#include "common/custombutton.h"
 
 UiDataManagerScene::UiDataManagerScene(QObject *parent)
     : QGraphicsScene(parent)

@@ -1,6 +1,5 @@
 #include "settingsdialog.h"
 
-#include "enums.h"
 #include <QMessageBox>
 
 SettingsDialog::SettingsDialog(Units temperatureUnit,

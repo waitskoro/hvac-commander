@@ -11,28 +11,28 @@ CONFIG += c++11
 SOURCES += \
     application.cpp \
     blockitem.cpp \
+    common/textwrapper.cpp \
     common/triangle.cpp \
+    common/unitsconverter.cpp \
     main.cpp \
     parameterwidget.cpp \
     settingsdialog.cpp \
-    textwrapper.cpp \
-    uidatamanagerscene.cpp \
-    unitsconverter.cpp
+    uidatamanagerscene.cpp
 
 HEADERS += \
     application.h \
     appsettings.h \
     blockitem.h \
-    common/custombutton.h \
+    common/enums.h \
+    common/parameter.h \
+    common/textwrapper.h \
     common/triangle.h \
-    enums.h \
+    common/unitsconverter.h \
+    headerwidget.h \
     parameter.h \
     parameterwidget.h \
-    parameterwidgetcontainer.h \
     settingsdialog.h \
-    textwrapper.h \
-    uidatamanagerscene.h \
-    unitsconverter.h
+    uidatamanagerscene.h
 
 # Default rules for deployment.
 qnx: target.path = /tmp/$${TARGET}/bin

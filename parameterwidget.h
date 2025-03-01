@@ -1,8 +1,8 @@
 #pragma once
 
 #include <QLabel>
-#include "enums.h"
-#include "parameter.h"
+#include "common/enums.h"
+#include "common/parameter.h"
 
 class ParameterWidget : public QLabel {
 

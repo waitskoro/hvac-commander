@@ -1,7 +1,7 @@
 #pragma once
 
 #include <QGraphicsRectItem>
-#include "textwrapper.h"
+#include "common/textwrapper.h"
 
 class BlockItem : public QGraphicsRectItem
 {

@@ -5,10 +5,10 @@
 
 #include "parameterwidget.h"
 
-class ParameterWidgetContainer : public QWidget {
+class HeaderWidget : public QWidget {
 
 public:
-    ParameterWidgetContainer(QWidget *parent = nullptr)
+    HeaderWidget(QWidget *parent = nullptr)
         : QWidget(parent)
     {
         QHBoxLayout* layout = new QHBoxLayout(this);
@@ -17,7 +17,7 @@ public:
         layout->setSpacing(30);
 
         m_temperatureWidget = new ParameterWidget(Parameter { Type::Temperature, Units::Celsius, 23 });
-        m_humidityLabel = new ParameterWidget(Parameter { Type::Temperature, Units::Percent, 60 });
+        m_humidityLabel = new ParameterWidget(Parameter { Type::Humidity, Units::Percent, 60 });
         m_pressureWidget = new ParameterWidget(Parameter { Type::Pressure, Units::MMHg, 1000 });
 
         layout->addStretch();

@@ -1,5 +1,5 @@
 ﻿#include "parameterwidget.h"
-#include "unitsconverter.h"
+#include "common/unitsconverter.h"
 
 #include <map>
 #include <QDebug>
@@ -93,21 +93,15 @@ void ParameterWidget::changeUnit(const Units newUnit)
         {{Units::Pascal, Units::MMHg},        UnitsConverter::pascalToMMHg}
     };
 
-    try {
-        auto it = converters.find(std::make_pair(m_parameter.unit, newUnit));
-        if (it != converters.end()) {
-            m_parameter.value = it->second(m_parameter.value);
-        } else {
-            throw std::invalid_argument("Unsupported conversion");
-        }
-        m_parameter.unit = newUnit;
-        emit unitChanged(m_parameter.unit);
-        setTextInLabel();
-    } catch (const std::exception& e) {
-        qWarning() << "Error during unit conversion:" << e.what();
-    }
+    auto it = converters.find(std::make_pair(m_parameter.unit, newUnit));
+    if (it != converters.end())
+        m_parameter.value = it->second(m_parameter.value);
 
+    m_parameter.unit = newUnit;
+
+    setTextInLabel();
     emit valueChanged();
+    emit unitChanged(m_parameter.unit);
 }
 
 Units ParameterWidget::getCurrentUnit() const

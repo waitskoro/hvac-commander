@@ -6,7 +6,7 @@
 #include <QPushButton>
 #include <QGraphicsScene>
 
-#include "enums.h"
+#include "common/enums.h"
 
 class BlockItem;
 
@@ -16,7 +16,6 @@ class UiDataManagerScene : public QGraphicsScene
 
 public:
     explicit UiDataManagerScene(QObject *parent = nullptr);
-
     void onTemperatureChanged(qint32 value);
 
 signals:

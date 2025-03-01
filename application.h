@@ -5,9 +5,9 @@
 #include <QVBoxLayout>
 #include <QHBoxLayout>
 #include <QLabel>
+#include <QPushButton>
 
-#include "parameterwidgetcontainer.h"
-
+class HeaderWidget;
 class SettingsDialog;
 class ParameterWidget;
 class UiDataManagerScene;
@@ -26,14 +26,13 @@ private slots:
     void updateParameters(double temperature, int humidity, int pressure);
 
     void setupMainLayout();
-    void connectSignalsAndSlots();
     void setInitialValues();
 
 private:
-    ParameterWidgetContainer *m_parameterWidgets;
-
+    HeaderWidget *m_parameterWidgets;
+    QPushButton *m_settingsButton;
+    SettingsDialog *m_dialog;
     UiDataManagerScene *m_uiDataManagerScene;
-
 };
 
 #endif // APPLICATION_H

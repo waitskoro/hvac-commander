@@ -9,7 +9,7 @@
 #include <QVBoxLayout>
 #include <QMessageBox>
 
-#include "enums.h"
+#include "common/enums.h"
 
 class SettingsDialog : public QDialog
 {
