@@ -1,18 +1,34 @@
 #pragma once
 
+/**
+ * @brief Перечисление единиц измерения.
+ */
 enum Units {
-    Kelvin,
-    Celsius,
-    Fahrenheit,
+    Kelvin,     ///< Температура в Кельвинах.
+    Celsius,    ///< Температура в градусах Цельсия.
+    Fahrenheit, ///< Температура в градусах Фаренгейта.
 
-    MMHg,
-    Pascal,
+    MMHg,       ///< Давление в миллиметрах ртутного столба.
+    Pascal,     ///< Давление в Паскалях.
 
-    Percent
+    Percent     ///< Влажность в процентах.
 };
 
+/**
+ * @brief Перечисление типов данных.
+ */
 enum Type {
-    Pressure,
-    Humidity,
-    Temperature,
+    Pressure,    ///< Давление.
+    Humidity,    ///< Влажность.
+    Temperature, ///< Температура.
+};
+
+/**
+ * @brief Перечисление позиций.
+ */
+enum Position {
+    Up,    ///< Вверх.
+    Down,  ///< Вниз.
+    Left,  ///< Влево.
+    Right  ///< Вправо.
 };

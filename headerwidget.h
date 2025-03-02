@@ -5,9 +5,19 @@
 
 #include "parameterwidget.h"
 
+/**
+ * @brief Класс HeaderWidget представляет виджет заголовка с отображением параметров.
+ *
+ * Класс отображает три параметра: температура, влажность и давление, используя виджеты ParameterWidget.
+ * Параметры располагаются в горизонтальном макете с отступами и растяжками.
+ */
 class HeaderWidget : public QWidget {
 
 public:
+    /**
+     * @brief Конструктор класса HeaderWidget.
+     * @param parent Родительский виджет (по умолчанию nullptr).
+     */
     HeaderWidget(QWidget *parent = nullptr)
         : QWidget(parent)
     {
@@ -27,12 +37,26 @@ public:
         layout->addStretch();
     }
 
+    /**
+     * @brief Возвращает виджет для отображения температуры.
+     * @return Указатель на виджет температуры.
+     */
     ParameterWidget* temperatureWidget() const { return m_temperatureWidget; }
+
+    /**
+     * @brief Возвращает виджет для отображения влажности.
+     * @return Указатель на виджет влажности.
+     */
     ParameterWidget* humidityLabel() const { return m_humidityLabel; }
+
+    /**
+     * @brief Возвращает виджет для отображения давления.
+     * @return Указатель на виджет давления.
+     */
     ParameterWidget* pressureWidget() const { return m_pressureWidget; }
 
 private:
-    ParameterWidget *m_temperatureWidget;
-    ParameterWidget *m_humidityLabel;
-    ParameterWidget *m_pressureWidget;
+    ParameterWidget *m_temperatureWidget; ///< Виджет для отображения температуры.
+    ParameterWidget *m_humidityLabel;    ///< Виджет для отображения влажности.
+    ParameterWidget *m_pressureWidget;   ///< Виджет для отображения давления.
 };

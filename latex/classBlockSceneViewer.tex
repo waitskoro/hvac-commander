@@ -1,0 +1,110 @@
+\hypertarget{classBlockSceneViewer}{}\doxysection{Block\+Scene\+Viewer Class Reference}
+\label{classBlockSceneViewer}\index{BlockSceneViewer@{BlockSceneViewer}}
+
+
+Класс \mbox{\hyperlink{classBlockSceneViewer}{Block\+Scene\+Viewer}} представляет графическую сцену для управления блоками и отображения данных.  
+
+
+
+
+{\ttfamily \#include $<$blockssceneviewer.\+h$>$}
+
+
+
+Inheritance diagram for Block\+Scene\+Viewer\+:
+% FIG 0
+
+
+Collaboration diagram for Block\+Scene\+Viewer\+:
+% FIG 1
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classBlockSceneViewer_aabb23a9db1a803cd2e940353d7e99ba4}{air\+Change}} (Position pos)
+\begin{DoxyCompactList}\small\item\em Сигнал, который испускается при изменении положения воздуха. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockSceneViewer_aa6f760e7474015f5afa7e756bf40809a}{temperature\+Change}} (Position pos)
+\begin{DoxyCompactList}\small\item\em Сигнал, который испускается при изменении температуры. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classBlockSceneViewer_a8c83104b0751877b2da1786ee67cc7d7}{Block\+Scene\+Viewer}} (QObject $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \mbox{\hyperlink{classBlockSceneViewer}{Block\+Scene\+Viewer}}. \end{DoxyCompactList}\item 
+void \mbox{\hyperlink{classBlockSceneViewer_a226bc8496b6bd4298c4c84a374da06d4}{on\+Temperature\+Changed}} (qint32 value)
+\begin{DoxyCompactList}\small\item\em Обрабатывает изменение температуры. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс \mbox{\hyperlink{classBlockSceneViewer}{Block\+Scene\+Viewer}} представляет графическую сцену для управления блоками и отображения данных. 
+
+Класс наследуется от QGraphics\+Scene и предоставляет функциональность для управления блоками, отображения температуры и взаимодействия с пользователем через кнопки. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classBlockSceneViewer_a8c83104b0751877b2da1786ee67cc7d7}\label{classBlockSceneViewer_a8c83104b0751877b2da1786ee67cc7d7}} 
+\index{BlockSceneViewer@{BlockSceneViewer}!BlockSceneViewer@{BlockSceneViewer}}
+\index{BlockSceneViewer@{BlockSceneViewer}!BlockSceneViewer@{BlockSceneViewer}}
+\doxysubsubsection{\texorpdfstring{BlockSceneViewer()}{BlockSceneViewer()}}
+{\footnotesize\ttfamily Block\+Scene\+Viewer\+::\+Block\+Scene\+Viewer (\begin{DoxyParamCaption}\item[{QObject $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор класса \mbox{\hyperlink{classBlockSceneViewer}{Block\+Scene\+Viewer}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Родительский объект (по умолчанию nullptr). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classBlockSceneViewer_aabb23a9db1a803cd2e940353d7e99ba4}\label{classBlockSceneViewer_aabb23a9db1a803cd2e940353d7e99ba4}} 
+\index{BlockSceneViewer@{BlockSceneViewer}!airChange@{airChange}}
+\index{airChange@{airChange}!BlockSceneViewer@{BlockSceneViewer}}
+\doxysubsubsection{\texorpdfstring{airChange}{airChange}}
+{\footnotesize\ttfamily void Block\+Scene\+Viewer\+::air\+Change (\begin{DoxyParamCaption}\item[{Position}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Сигнал, который испускается при изменении положения воздуха. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Позиция воздуха (например, влево или вправо). \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockSceneViewer_a226bc8496b6bd4298c4c84a374da06d4}\label{classBlockSceneViewer_a226bc8496b6bd4298c4c84a374da06d4}} 
+\index{BlockSceneViewer@{BlockSceneViewer}!onTemperatureChanged@{onTemperatureChanged}}
+\index{onTemperatureChanged@{onTemperatureChanged}!BlockSceneViewer@{BlockSceneViewer}}
+\doxysubsubsection{\texorpdfstring{onTemperatureChanged()}{onTemperatureChanged()}}
+{\footnotesize\ttfamily void Block\+Scene\+Viewer\+::on\+Temperature\+Changed (\begin{DoxyParamCaption}\item[{qint32}]{value }\end{DoxyParamCaption})}
+
+
+
+Обрабатывает изменение температуры. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em value} & Новое значение температуры. \\
+\hline
+\end{DoxyParams}
+\mbox{\Hypertarget{classBlockSceneViewer_aa6f760e7474015f5afa7e756bf40809a}\label{classBlockSceneViewer_aa6f760e7474015f5afa7e756bf40809a}} 
+\index{BlockSceneViewer@{BlockSceneViewer}!temperatureChange@{temperatureChange}}
+\index{temperatureChange@{temperatureChange}!BlockSceneViewer@{BlockSceneViewer}}
+\doxysubsubsection{\texorpdfstring{temperatureChange}{temperatureChange}}
+{\footnotesize\ttfamily void Block\+Scene\+Viewer\+::temperature\+Change (\begin{DoxyParamCaption}\item[{Position}]{pos }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Сигнал, который испускается при изменении температуры. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em pos} & Позиция, к которой относится изменение температуры. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+blockssceneviewer.\+h\item 
+blockssceneviewer.\+cpp\end{DoxyCompactItemize}

@@ -3,7 +3,7 @@
 #include "headerwidget.h"
 #include "settingsdialog.h"
 #include "parameterwidget.h"
-#include "uidatamanagerscene.h"
+#include "blockssceneviewer.h"
 
 #include <QMessageBox>
 #include <QGraphicsScene>
@@ -16,7 +16,7 @@ Application::Application(QWidget *parent)
     , m_dialog(new SettingsDialog(m_parameterWidgets->temperatureWidget()->getCurrentUnit(),
                                   m_parameterWidgets->pressureWidget()->getCurrentUnit(),
                                   this))
-    , m_uiDataManagerScene(new UiDataManagerScene(this))
+    , m_uiDataManagerScene(new BlockSceneViewer(this))
 {
     connect(m_dialog,
             &SettingsDialog::parametersAccepted,
@@ -29,19 +29,14 @@ Application::Application(QWidget *parent)
             &Application::showSettingsDialog);
 
     connect(m_uiDataManagerScene,
-            &UiDataManagerScene::temperatureDown,
+            &BlockSceneViewer::temperatureChange,
             m_parameterWidgets,
-            [this](){
+            [this](Position pos){
                 int newValue = m_parameterWidgets->temperatureWidget()->getValue();
-                m_parameterWidgets->temperatureWidget()->setValue(newValue - 1);
-            });
-
-    connect(m_uiDataManagerScene,
-            &UiDataManagerScene::temperatureUp,
-            m_parameterWidgets,
-            [this](){
-                int newValue = m_parameterWidgets->temperatureWidget()->getValue();
-                m_parameterWidgets->temperatureWidget()->setValue(newValue + 1);
+                if (pos == Position::Down)
+                    m_parameterWidgets->temperatureWidget()->setValue(newValue - 1);
+                if(pos == Position::Up)
+                    m_parameterWidgets->temperatureWidget()->setValue(newValue + 1);
             });
 
     connect(m_parameterWidgets->temperatureWidget(),

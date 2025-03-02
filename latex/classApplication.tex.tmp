@@ -1,0 +1,80 @@
+\hypertarget{classApplication}{}\doxysection{Application Class Reference}
+\label{classApplication}\index{Application@{Application}}
+
+
+Класс \mbox{\hyperlink{classApplication}{Application}} представляет главное окно приложения.  
+
+
+
+
+{\ttfamily \#include $<$application.\+h$>$}
+
+
+
+Inheritance diagram for Application\+:
+% FIG 0
+
+
+Collaboration diagram for Application\+:
+% FIG 1
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classApplication_a31aa1146e0f1e20ad4813b88b006083a}{parameters\+Changed}} (double temperature, int humidity, int pressure)
+\begin{DoxyCompactList}\small\item\em Сигнал, который испускается при изменении параметров. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classApplication_aae53f3dcf432cfc5c17ebab6fd7d614c}{Application}} (QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \mbox{\hyperlink{classApplication}{Application}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс \mbox{\hyperlink{classApplication}{Application}} представляет главное окно приложения. 
+
+Класс управляет основным интерфейсом пользователя, включая отображение параметров, кнопку настроек и диалог настроек. Также он обрабатывает изменения параметров и обновляет интерфейс в соответствии с ними. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classApplication_aae53f3dcf432cfc5c17ebab6fd7d614c}\label{classApplication_aae53f3dcf432cfc5c17ebab6fd7d614c}} 
+\index{Application@{Application}!Application@{Application}}
+\index{Application@{Application}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{Application()}{Application()}}
+{\footnotesize\ttfamily Application\+::\+Application (\begin{DoxyParamCaption}\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор класса \mbox{\hyperlink{classApplication}{Application}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em parent} & Родительский виджет (по умолчанию nullptr). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classApplication_a31aa1146e0f1e20ad4813b88b006083a}\label{classApplication_a31aa1146e0f1e20ad4813b88b006083a}} 
+\index{Application@{Application}!parametersChanged@{parametersChanged}}
+\index{parametersChanged@{parametersChanged}!Application@{Application}}
+\doxysubsubsection{\texorpdfstring{parametersChanged}{parametersChanged}}
+{\footnotesize\ttfamily void Application\+::parameters\+Changed (\begin{DoxyParamCaption}\item[{double}]{temperature,  }\item[{int}]{humidity,  }\item[{int}]{pressure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Сигнал, который испускается при изменении параметров. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & Новое значение температуры. \\
+\hline
+{\em humidity} & Новое значение влажности. \\
+\hline
+{\em pressure} & Новое значение давления. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+application.\+h\item 
+application.\+cpp\end{DoxyCompactItemize}

@@ -1,0 +1,84 @@
+\hypertarget{classSettingsDialog}{}\doxysection{Settings\+Dialog Class Reference}
+\label{classSettingsDialog}\index{SettingsDialog@{SettingsDialog}}
+
+
+Класс \mbox{\hyperlink{classSettingsDialog}{Settings\+Dialog}} представляет диалоговое окно для настройки параметров.  
+
+
+
+
+{\ttfamily \#include $<$settingsdialog.\+h$>$}
+
+
+
+Inheritance diagram for Settings\+Dialog\+:
+% FIG 0
+
+
+Collaboration diagram for Settings\+Dialog\+:
+% FIG 1
+\doxysubsection*{Signals}
+\begin{DoxyCompactItemize}
+\item 
+void \mbox{\hyperlink{classSettingsDialog_af2141db745e7decc8e81a05b331567e8}{parameters\+Accepted}} (double temperature, int humidity, int pressure)
+\begin{DoxyCompactList}\small\item\em Сигнал, который испускается при подтверждении введенных параметров. \end{DoxyCompactList}\end{DoxyCompactItemize}
+\doxysubsection*{Public Member Functions}
+\begin{DoxyCompactItemize}
+\item 
+\mbox{\hyperlink{classSettingsDialog_ad256df681dfe9ef8c12a44e525d5be39}{Settings\+Dialog}} (const Units temperature\+Param, const Units pressure\+Param, QWidget $\ast$parent=nullptr)
+\begin{DoxyCompactList}\small\item\em Конструктор класса \mbox{\hyperlink{classSettingsDialog}{Settings\+Dialog}}. \end{DoxyCompactList}\end{DoxyCompactItemize}
+
+
+\doxysubsection{Detailed Description}
+Класс \mbox{\hyperlink{classSettingsDialog}{Settings\+Dialog}} представляет диалоговое окно для настройки параметров. 
+
+Класс позволяет пользователю вводить значения температуры, влажности и давления, а также проверяет корректность введенных данных. При подтверждении данных испускается сигнал с новыми значениями параметров. 
+
+\doxysubsection{Constructor \& Destructor Documentation}
+\mbox{\Hypertarget{classSettingsDialog_ad256df681dfe9ef8c12a44e525d5be39}\label{classSettingsDialog_ad256df681dfe9ef8c12a44e525d5be39}} 
+\index{SettingsDialog@{SettingsDialog}!SettingsDialog@{SettingsDialog}}
+\index{SettingsDialog@{SettingsDialog}!SettingsDialog@{SettingsDialog}}
+\doxysubsubsection{\texorpdfstring{SettingsDialog()}{SettingsDialog()}}
+{\footnotesize\ttfamily Settings\+Dialog\+::\+Settings\+Dialog (\begin{DoxyParamCaption}\item[{const Units}]{temperature\+Param,  }\item[{const Units}]{pressure\+Param,  }\item[{QWidget $\ast$}]{parent = {\ttfamily nullptr} }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [explicit]}}
+
+
+
+Конструктор класса \mbox{\hyperlink{classSettingsDialog}{Settings\+Dialog}}. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature\+Param} & Единица измерения температуры. \\
+\hline
+{\em pressure\+Param} & Единица измерения давления. \\
+\hline
+{\em parent} & Родительский виджет (по умолчанию nullptr). \\
+\hline
+\end{DoxyParams}
+
+
+\doxysubsection{Member Function Documentation}
+\mbox{\Hypertarget{classSettingsDialog_af2141db745e7decc8e81a05b331567e8}\label{classSettingsDialog_af2141db745e7decc8e81a05b331567e8}} 
+\index{SettingsDialog@{SettingsDialog}!parametersAccepted@{parametersAccepted}}
+\index{parametersAccepted@{parametersAccepted}!SettingsDialog@{SettingsDialog}}
+\doxysubsubsection{\texorpdfstring{parametersAccepted}{parametersAccepted}}
+{\footnotesize\ttfamily void Settings\+Dialog\+::parameters\+Accepted (\begin{DoxyParamCaption}\item[{double}]{temperature,  }\item[{int}]{humidity,  }\item[{int}]{pressure }\end{DoxyParamCaption})\hspace{0.3cm}{\ttfamily [signal]}}
+
+
+
+Сигнал, который испускается при подтверждении введенных параметров. 
+
+
+\begin{DoxyParams}{Parameters}
+{\em temperature} & Значение температуры. \\
+\hline
+{\em humidity} & Значение влажности. \\
+\hline
+{\em pressure} & Значение давления. \\
+\hline
+\end{DoxyParams}
+
+
+The documentation for this class was generated from the following files\+:\begin{DoxyCompactItemize}
+\item 
+settingsdialog.\+h\item 
+settingsdialog.\+cpp\end{DoxyCompactItemize}
